@@ -1,12 +1,10 @@
 dependencies:
 - name: kibana
   version: "0.4.2"
-  #repository: https://kubernetes-charts.storage.googleapis.com/
-  repository: "file://../kibana"
+  repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
 - name: elasticsearch
   version: "0.1.3"
-  #repository: https://raw.githubusercontent.com/upmc-enterprises/elasticsearch-operator/master/charts
-  repository: "file://../elasticsearch"
+  repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
 - name: fluent-bit
   version: "0.4.0"
   repository: https://kubernetes-charts.storage.googleapis.com/
