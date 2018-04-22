@@ -1,0 +1,56 @@
+# Default values for elasticsearch-operator.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+image:
+  repository: quay.io/pires/docker-elasticsearch-kubernetes
+  tag: "6.1.3"
+  #pullSecret: test
+
+clientReplicas: 1
+masterReplicas: 1
+dataReplicas: 1
+dataVolumeSize: 1Gi
+javaOpts: "-Xms1024m -Xmx1024m"
+
+# Deploy data nodes across zones
+#zones:
+#  - us-east-1c
+#  - us-east-1d
+#  - us-east-1e
+
+snapshot:
+  enabled: false
+  bucketName: elasticsnapshots
+  schedule: "@every 2m"
+  authentication:
+    enabled: false
+    password: test
+    username: test
+
+storage:
+  # e.g. gp2 for AWS
+  type: gp2
+  # e.g. kubernetes.io/aws-ebs for AWS
+  classProvisioner: volume.alpha.kubernetes.io/storage-class
+  # Retain or Delete
+  reclaimPolicy: Delete
+
+kibana:
+  enabled: false
+  image: docker.elastic.co/kibana/kibana-oss:6.1.3
+
+cerebro:
+  enabled: false
+  image: upmcenterprises/cerebro:0.6.8
+
+statsd:
+  enabled: false
+  host: ""
+
+resources:
+  requests:
+    memory: 1024Mi
+    cpu: 200m
+  limits:
+    memory: 2048Mi
+    cpu: '1'

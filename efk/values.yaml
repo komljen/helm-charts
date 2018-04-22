@@ -1,0 +1,49 @@
+# Default values for efk.
+
+# https://github.com/kubernetes/charts/blob/master/stable/kibana/values.yaml
+kibana:
+  image:
+    repository: "docker.elastic.co/kibana/kibana-oss"
+    tag: "6.1.3"
+  env:
+    # All Kibana configuration options are adjustable via env vars.
+    # To adjust a config option to an env var uppercase + replace `.` with `_`
+    # Ref: https://www.elastic.co/guide/en/kibana/current/settings.html
+    #
+    ELASTICSEARCH_URL: http://elasticsearch-efk-cluster:9200
+    SERVER_PORT: 5601
+    LOGGING_VERBOSE: "true"
+    SERVER_DEFAULTROUTE: "/app/kibana"
+
+# https://github.com/upmc-enterprises/elasticsearch-operator/blob/master/charts/elasticsearch/values.yaml
+elasticsearch:
+  image:
+    repository: quay.io/pires/docker-elasticsearch-kubernetes
+    tag: "6.1.3"
+  name: efk-cluster
+  clientReplicas: 1
+  masterReplicas: 1
+  dataReplicas: 1
+  dataVolumeSize: 1Gi
+  javaOpts: "-Xms1024m -Xmx1024m"
+  resources:
+    requests:
+      memory: 1024Mi
+      cpu: 200m
+    limits:
+      memory: 3072Mi
+      cpu: '2'
+
+# https://github.com/kubernetes/charts/blob/master/stable/fluent-bit/values.yaml
+fluent-bit:
+  image:
+    fluent_bit:
+      repository: fluent/fluent-bit
+      tag: 0.12.15
+  backend:
+    type: es
+    es:
+      host: elasticsearch-efk-cluster
+      port: 9200
+  rbac:
+    create: false

@@ -1,0 +1,67 @@
+apiVersion: v1
+entries:
+  efk:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-04-22T19:32:29.949265275+02:00
+    description: A Helm chart for Kubernetes
+    digest: cc5cefbaa678fb7c2bd3a1de320e4ce0ffd616fc247c82bd753080c7c3319b57
+    name: efk
+    urls:
+    - efk-0.1.0.tgz
+    version: 0.1.0
+  elasticsearch:
+  - apiVersion: v1
+    appVersion: 6.1.3
+    created: 2018-04-22T19:32:29.949559588+02:00
+    description: A Helm chart for Elasticsearch cluster
+    digest: 32a25b05c73cc92b49fc53b64d25cee44d28e1062db1ef12f2cbcb0e260d0019
+    maintainers:
+    - email: alen.komljen@live.com
+      name: komljen
+      url: https://akomljen.com
+    name: elasticsearch
+    sources:
+    - https://github.com/upmc-enterprises/elasticsearch-operator
+    urls:
+    - elasticsearch-0.1.3.tgz
+    version: 0.1.3
+  elasticsearch-operator:
+  - apiVersion: v1
+    appVersion: 0.0.10
+    created: 2018-04-22T19:32:29.949867083+02:00
+    description: A Helm chart for Elasticsearch operator
+    digest: dea5f18a301f11dee2aef9ac1dd3b44069e4bc128c8c32f8e1322a55a385a282
+    maintainers:
+    - email: alen.komljen@live.com
+      name: komljen
+      url: https://akomljen.com
+    name: elasticsearch-operator
+    sources:
+    - https://github.com/upmc-enterprises/elasticsearch-operator
+    urls:
+    - elasticsearch-operator-0.1.3.tgz
+    version: 0.1.3
+  kibana:
+  - appVersion: 6.1.3
+    created: 2018-04-22T19:32:29.950284774+02:00
+    description: Kibana is an open source data visualization plugin for Elasticsearch
+    digest: 17482b8ec6895ab271666a834223554857490c36acc449e87b2ba4b134b3e704
+    engine: gotpl
+    home: https://www.elastic.co/products/kibana
+    icon: https://raw.githubusercontent.com/elastic/kibana/master/src/ui/public/icons/kibana-color.svg
+    keywords:
+    - elasticsearch
+    - kibana
+    maintainers:
+    - email: casey@monax.io
+      name: compleatang
+    - email: alen.komljen@live.com
+      name: komljen
+    name: kibana
+    sources:
+    - https://github.com/elastic/kibana
+    urls:
+    - kibana-0.4.2.tgz
+    version: 0.4.2
+generated: 2018-04-22T19:32:29.94788744+02:00
