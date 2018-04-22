@@ -10,7 +10,7 @@ helm repo add akomljen-charts https://raw.githubusercontent.com/komljen/helm-cha
 
 ## Official Charts Repository
 
-Why not using official charts repo?
+Why not use official charts repo?
 
 Well, if you tried to contribute to the official charts repo you probably know that you need to wait a few weeks or more to merge. There are a lot of opened pull requests and they require the huge amount of work. A lot of people are learning Helm while contributing, so maintainers need to guide them. That is slow and sometimes I cannot wait for changes to get merged.
 
