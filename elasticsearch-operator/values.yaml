@@ -2,10 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 image:
-  repository: upmcenterprises/elasticsearch-operator
-  tag: 0.0.10
-  pullPolicy: Always
-#  pullSecret:
+  repository: komljen/elasticsearch-operator
+  tag: 0.0.12
+  pullPolicy: IfNotPresent
+  # pullSecret: secretName
 resources:
   limits:
     cpu: 100m

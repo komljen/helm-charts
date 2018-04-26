@@ -18,8 +18,8 @@ kibana:
 # https://github.com/komljen/helm-charts/blob/master/elasticsearch/values.yaml
 elasticsearch:
   image:
-    repository: quay.io/pires/docker-elasticsearch-kubernetes
-    tag: "6.1.3"
+    repository: upmcenterprises/docker-elasticsearch-kubernetes
+    tag: "6.1.3_0"
   name: efk-cluster
   clientReplicas: 1
   masterReplicas: 1

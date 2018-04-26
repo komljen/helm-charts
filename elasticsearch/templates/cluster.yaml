@@ -8,6 +8,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
+  use-ssl: {{ .Values.useSSL }}
 {{- if .Values.kibana.enabled }}
   kibana:
     image: {{ .Values.kibana.image }}

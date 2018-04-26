@@ -4,9 +4,9 @@ dependencies:
   version: 0.4.2
 - name: elasticsearch
   repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
-  version: 0.1.3
+  version: 0.1.4
 - name: fluent-bit
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 0.4.0
-digest: sha256:93cd1e68bdb7a4ec8d09494d2a7efa44e3d72602c82996a717475182c6bb7ae2
-generated: 2018-04-22T19:36:21.253087786+02:00
+digest: sha256:e86ccac82a3b32f17ff8eee76a4b778393b274aab64df4f75bfe5a22b3cf6c2a
+generated: 2018-04-26T13:54:10.295466738+02:00
