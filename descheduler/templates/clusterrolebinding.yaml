@@ -1,0 +1,19 @@
+{{- if .Values.rbac.create }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ template "descheduler.fullname" . }}
+  labels:
+    app: {{ template "descheduler.name" . }}
+    chart: {{ template "descheduler.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ template "descheduler.fullname" . }}
+subjects:
+- kind: ServiceAccount
+  name: {{ template "descheduler.serviceAccountName" . }}
+  namespace: {{ .Release.Namespace }}
+{{- end }}

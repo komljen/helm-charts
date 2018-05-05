@@ -20,6 +20,7 @@ spec:
     spec:
       template:
         spec:
+          serviceAccountName: {{ template "descheduler.serviceAccountName" . }}
           containers:
           - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
