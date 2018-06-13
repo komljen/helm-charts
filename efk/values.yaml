@@ -39,7 +39,7 @@ fluent-bit:
   image:
     fluent_bit:
       repository: fluent/fluent-bit
-      tag: 0.12.15
+      tag: 0.13.0
   backend:
     type: es
     es:

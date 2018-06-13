@@ -3,7 +3,7 @@ entries:
   descheduler:
   - apiVersion: v1
     appVersion: v0.5.0-4-ga7ceb671
-    created: 2018-05-05T17:29:40.313648962+02:00
+    created: 2018-06-13T23:59:26.936138887+02:00
     description: A Helm chart for Kubernetes Descheduler
     digest: df89087cd7d16c413c29ef0b1ea6cf5e1844caae1844812a7069e2da6a60f80b
     name: descheduler
@@ -13,9 +13,9 @@ entries:
   efk:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-05-05T17:29:40.315153149+02:00
+    created: 2018-06-13T23:59:26.937378352+02:00
     description: A Helm chart for EFK stack
-    digest: 70ce2ed963de903393648134fb181a56e44f189164dffedbea0a6a297bf93f1a
+    digest: 99247ee3d21778bd3e39a24a9da08bf6a30e74a6ca5eb0500fb60f8defbd0486
     name: efk
     urls:
     - efk-0.1.0.tgz
@@ -23,7 +23,7 @@ entries:
   elasticsearch:
   - apiVersion: v1
     appVersion: 6.1.3
-    created: 2018-05-05T17:29:40.315765015+02:00
+    created: 2018-06-13T23:59:26.940000842+02:00
     description: A Helm chart for Elasticsearch cluster
     digest: eb8163d9a2153c5760e80b530a4ff8653c569b24a3cffd26a1f1be8a4e080179
     maintainers:
@@ -38,7 +38,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 6.1.3
-    created: 2018-05-05T17:29:40.315455828+02:00
+    created: 2018-06-13T23:59:26.939719916+02:00
     description: A Helm chart for Elasticsearch cluster
     digest: 32a25b05c73cc92b49fc53b64d25cee44d28e1062db1ef12f2cbcb0e260d0019
     maintainers:
@@ -54,7 +54,7 @@ entries:
   elasticsearch-operator:
   - apiVersion: v1
     appVersion: 0.0.12
-    created: 2018-05-05T17:29:40.316712013+02:00
+    created: 2018-06-13T23:59:26.941444491+02:00
     description: A Helm chart for Elasticsearch operator
     digest: 5b946ae9c69685e80964599cadfcf1b675b124eb393471ee0f335e63eb572024
     maintainers:
@@ -69,7 +69,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: 0.0.12
-    created: 2018-05-05T17:29:40.316374162+02:00
+    created: 2018-06-13T23:59:26.941138254+02:00
     description: A Helm chart for Elasticsearch operator
     digest: f909a7a19ec3e04259a40728c7428515701aed1f8cae7407c8b6a993b6e083d8
     maintainers:
@@ -84,7 +84,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 0.0.10
-    created: 2018-05-05T17:29:40.316063893+02:00
+    created: 2018-06-13T23:59:26.940556179+02:00
     description: A Helm chart for Elasticsearch operator
     digest: dea5f18a301f11dee2aef9ac1dd3b44069e4bc128c8c32f8e1322a55a385a282
     maintainers:
@@ -99,7 +99,7 @@ entries:
     version: 0.1.3
   kibana:
   - appVersion: 6.1.3
-    created: 2018-05-05T17:29:40.317185533+02:00
+    created: 2018-06-13T23:59:26.941860799+02:00
     description: Kibana is an open source data visualization plugin for Elasticsearch
     digest: 17482b8ec6895ab271666a834223554857490c36acc449e87b2ba4b134b3e704
     engine: gotpl
@@ -119,4 +119,4 @@ entries:
     urls:
     - kibana-0.4.2.tgz
     version: 0.4.2
-generated: 2018-05-05T17:29:40.313038791+02:00
+generated: 2018-06-13T23:59:26.935554905+02:00
