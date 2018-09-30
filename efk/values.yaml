@@ -46,4 +46,4 @@ fluent-bit:
       host: elasticsearch-efk-cluster
       port: 9200
   rbac:
-    create: false
+    create: true
