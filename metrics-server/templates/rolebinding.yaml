@@ -11,7 +11,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: {{ template "metrics-server.fullname" . }}
+  name: extension-apiserver-authentication-reader
 subjects:
 - kind: ServiceAccount
   name: {{ template "metrics-server.serviceAccountName" . }}
