@@ -1,0 +1,6 @@
+dependencies:
+- name: metrics-server
+  repository: file://../metrics-server
+  version: 0.0.5
+digest: sha256:d370ab37cdf2842869d08e8e9e743e99e2e3d75f0206a41b735f19a7466ecd6c
+generated: 2018-09-30T16:31:50.185598231+02:00
