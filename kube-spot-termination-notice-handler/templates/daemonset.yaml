@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "kube-spot-termination-notice-handler.fullname" . }}
   labels:
-    app: {{ template "name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    app: {{ template "kube-spot-termination-notice-handler.name" . }}
+    chart: {{ template "kube-spot-termination-notice-handler.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   template:
     metadata:
       labels:
-        app: {{ template "name" . }}
+        app: {{ template "kube-spot-termination-notice-handler.name" . }}
         release: {{ .Release.Name }}
     spec:
       serviceAccountName: {{ template "kube-spot-termination-notice-handler.serviceAccountName" . }}
