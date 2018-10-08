@@ -26,9 +26,9 @@ spec:
             {{- end }}
             {{- if .Values.sematext.token }}
             - name: SEMATEXT_URL
-              {{- if .Values.sematext.region eq "US" }}
+              {{- if eq .Values.sematext.region "US" }}
               value: "https://event-receiver.sematext.com/{{ .Values.sematext.token }}/event"
-              {{- else if .Values.sematext.region eq "EU" }}
+              {{- else if eq .Values.sematext.region "EU" }}
               value: "https://event-receiver.eu.sematext.com/{{ .Values.sematext.token }}/event"
               {{- end }}
             {{- end }}
