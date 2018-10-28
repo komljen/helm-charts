@@ -1,7 +1,6 @@
 dependencies:
 - name: metrics-server
   version: "0.0.5"
-  repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
-  # repository: file://../metrics-server
+  # repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
+  repository: file://../metrics-server
   condition: metricsServer.enabled
-

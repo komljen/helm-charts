@@ -1,0 +1,18 @@
+version: 0.1.3
+appVersion: 1.0-beta.7
+name: alb-ingress
+description: The ALB Ingress Controller satisfies Kubernetes ingress resources by provisioning Application Load Balancers.
+engine: gotpl
+home: https://github.com/kubernetes-sigs/aws-alb-ingress-controller
+keywords:
+  - aws
+  - ingress
+maintainers:
+  - name: Kraig Amador
+    email: kraig.amador@ticketmaster.com
+  - name: Andrew Tandoc
+    email: tandoca@amazon.com
+  - name: komljen
+    email: alen.komljen@live.com
+sources:
+  - https://github.com/kubernetes-sigs/aws-alb-ingress-controller
