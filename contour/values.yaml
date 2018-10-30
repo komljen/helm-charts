@@ -1,0 +1,53 @@
+
+replicaCount: 1
+
+controller:
+  image:
+    repository: gcr.io/heptio-images/contour
+    tag: v0.7.0
+    pullPolicy: IfNotPresent
+
+proxy:
+  image:
+    repository: docker.io/envoyproxy/envoy-alpine
+    tag: v1.7.0
+    pullPolicy: IfNotPresent
+  service:
+    # Check the full list of contour specific annotations at https://github.com/heptio/contour/blob/master/docs/annotations.md#contour-specific-service-annotations
+    annotations: {}
+      # This annotation puts the AWS ELB into "TCP" mode so that it does not
+      # do HTTP negotiation for HTTPS connections at the ELB edge.
+      # The downside of this is the remote IP address of all connections will
+      # appear to be the internal address of the ELB. See docs/proxy-proto.md
+      # for information about enabling the PROXY protocol on the ELB to recover
+      # the original remote IP address.
+      #service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp  
+    type: LoadBalancer
+  # Enable statsd metrics
+  statsd:
+    enabled: false
+  stats: {}
+    # address: 0.0.0.0
+    # port: 8002
+
+annotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "8002"
+  prometheus.io/path: "/stats"
+  prometheus.io/format: "prometheus"
+
+rbac:
+  create: true
+
+serviceAccount:
+  # Specifies whether a ServiceAccount should be created
+  create: true
+  # The name of the ServiceAccount to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name:
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []

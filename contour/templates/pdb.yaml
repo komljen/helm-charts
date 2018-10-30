@@ -1,0 +1,17 @@
+{{- if gt .Values.replicaCount 1.0 }}
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ template "contour.fullname" . }}
+  labels:
+    app: {{ template "contour.name" . }}
+    chart: {{ template "contour.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ template "contour.name" . }}
+      release: {{ .Release.Name }}
+  maxUnavailable: 1
+{{- end }}

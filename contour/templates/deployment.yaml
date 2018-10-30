@@ -1,0 +1,87 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ include "contour.fullname" . }}
+  labels:
+    app: {{ template "contour.name" . }}
+    chart: {{ template "contour.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ template "contour.fullname" . }}
+      release: {{ .Release.Name }}
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "contour.fullname" . }}
+        release: {{ .Release.Name }}
+      annotations:
+{{ toYaml .Values.annotations | indent 8 }}
+    spec:
+      serviceAccountName: {{ template "contour.serviceAccountName" . }}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: {{ template "contour.fullname" . }}
+                  release: {{ .Release.Name }}
+              topologyKey: kubernetes.io/hostname      
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.controller.image.repository }}:{{ .Values.controller.image.tag }}"
+        imagePullPolicy: {{ .Values.controller.image.pullPolicy }}
+        command: ["contour"]
+        args: ["serve", "--incluster"]
+      - name: envoy
+        image: "{{ .Values.proxy.image.repository }}:{{ .Values.proxy.image.tag }}"
+        imagePullPolicy: {{ .Values.proxy.image.pullPolicy }}
+        ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 8443
+          name: https
+        command: ["envoy"]
+        args:
+        - --config-path /config/contour.yaml
+        - --service-cluster cluster0
+        - --service-node node0
+        - --log-level info
+        - --v2-config-only
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8002
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        volumeMounts:
+        - name: {{ .Chart.Name }}-config
+          mountPath: /config
+      initContainers:
+      - name: envoy-initconfig
+        image: "{{ .Values.controller.image.repository }}:{{ .Values.controller.image.tag }}"
+        imagePullPolicy: {{ .Values.controller.image.pullPolicy }}
+        command: ["contour"]
+        args:
+        - bootstrap
+        {{- if .Values.proxy.statsd.enabled }}
+        - --statsd-enable
+        {{- end }}
+        {{- if .Values.proxy.stats.address }}
+        - --stats-address={{ .Values.proxy.stats.address }}
+        {{- end }}
+        {{- if .Values.proxy.stats.port }}
+        - --stats-port={{ .Values.proxy.stats.port }}
+        {{- end }}
+        - /config/contour.yaml
+        volumeMounts:
+        - name: {{ .Chart.Name }}-config
+          mountPath: /config
+      volumes:
+      - name: {{ .Chart.Name }}-config
+        emptyDir: {}
