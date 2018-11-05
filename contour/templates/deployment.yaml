@@ -62,6 +62,10 @@ spec:
         volumeMounts:
         - name: {{ .Chart.Name }}-config
           mountPath: /config
+        lifecycle:
+          preStop:
+            exec:
+              command: ["wget", "-qO-", "http://localhost:9001/healthcheck/fail"]
       initContainers:
       - name: envoy-initconfig
         image: "{{ .Values.controller.image.repository }}:{{ .Values.controller.image.tag }}"
