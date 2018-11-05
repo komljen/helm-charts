@@ -26,22 +26,6 @@ entries:
     version: 0.1.3
   contour:
   - appVersion: v0.7.0
-    created: 2018-10-30T22:39:37.512778+01:00
-    description: Contour is a Kubernetes ingress controller for Lyft's Envoy proxy.
-    digest: 112d20c17e266b1a97586f946b1eabed4b6c785c2bd6483dd4a204d8e80ec1f3
-    home: https://github.com/heptio/contour
-    keywords:
-    - ingress
-    - proxy
-    - contour
-    maintainers:
-    - email: alen.komljen@live.com
-      name: komljen
-    name: contour
-    urls:
-    - contour-1.0.0.tgz
-    version: 1.0.0
-  - appVersion: v0.7.0
     created: 2018-11-05T17:02:03.912856+01:00
     description: Contour is a Kubernetes ingress controller for Lyft's Envoy proxy.
     digest: 85b78cda0c542edd18cec6775313e7d84549736a1dcc51184648a547e81fb718
