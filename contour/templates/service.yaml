@@ -20,6 +20,6 @@ spec:
    protocol: TCP
    targetPort: 8443
  selector:
-   app: {{ template "contour.fullname" . }}
+   app: {{ template "contour.name" . }}
    release: {{ .Release.Name }}
  type: {{ .Values.proxy.service.type }}

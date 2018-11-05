@@ -10,13 +10,13 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: {{ template "contour.fullname" . }}
+      app: {{ template "contour.name" . }}
       release: {{ .Release.Name }}
   replicas: {{ .Values.replicaCount }}
   template:
     metadata:
       labels:
-        app: {{ template "contour.fullname" . }}
+        app: {{ template "contour.name" . }}
         release: {{ .Release.Name }}
       annotations:
 {{ toYaml .Values.annotations | indent 8 }}
@@ -29,7 +29,7 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchLabels:
-                  app: {{ template "contour.fullname" . }}
+                  app: {{ template "contour.name" . }}
                   release: {{ .Release.Name }}
               topologyKey: kubernetes.io/hostname      
       containers:
