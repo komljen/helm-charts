@@ -1,0 +1,11 @@
+name: devto
+version: 0.1.0
+description: Dev.to is a platform where programmers share ideas and help each other grow
+sources:
+  - https://github.com/thepracticaldev/dev.to
+keywords:
+- dev.to
+maintainers:
+- name: komljen
+  email: alen.komljen@live.com
+  url: https://akomljen.com

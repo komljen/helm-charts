@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "devto.fullname" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    app: {{ template "devto.name" . }}
+    heritage: "{{ .Release.Service }}"
+    release: "{{ .Release.Name }}"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "devto.name" . }}
+      release: "{{ .Release.Name }}"
+  template:
+    metadata:
+      labels:
+        app: {{ template "devto.name" . }}
+        release: "{{ .Release.Name }}"
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+    spec:
+      initContainers:
+      - name: db-prepare
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command:
+        - bash
+        - -c
+        {{- if .Release.IsInstall }}
+        - 'rails db:setup'
+        {{- else }}
+        - 'rails db:migrate'
+        {{- end }}
+        env:
+        - name: POSTGRESQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-postgresql
+              key: postgresql-password
+        - name: DATABASE_URL
+          value: "postgres://$(POSTGRESQL_USER):$(POSTGRESQL_PASSWORD)@$(POSTGRESQL_HOST):5432/$(POSTGRESQL_DATABASE)"
+        envFrom:
+        - configMapRef:
+            name: {{ template "devto.fullname" . }}
+        - secretRef:
+            name: {{ template "devto.fullname" . }}
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: POSTGRESQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-postgresql
+              key: postgresql-password
+        - name: DATABASE_URL
+          value: "postgres://$(POSTGRESQL_USER):$(POSTGRESQL_PASSWORD)@$(POSTGRESQL_HOST):5432/$(POSTGRESQL_DATABASE)"
+        envFrom:
+        - configMapRef:
+            name: {{ template "devto.fullname" . }}
+        - secretRef:
+            name: {{ template "devto.fullname" . }}
+        ports:
+          - name: http
+            containerPort: {{ .Values.service.port }}
+            protocol: TCP
+      - name: {{ .Chart.Name }}-jobs
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command:
+        - bash
+        - -c
+        - 'rails jobs:work'
+        env:
+        - name: POSTGRESQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-postgresql
+              key: postgresql-password
+        - name: DATABASE_URL
+          value: "postgres://$(POSTGRESQL_USER):$(POSTGRESQL_PASSWORD)@$(POSTGRESQL_HOST):5432/$(POSTGRESQL_DATABASE)"
+        envFrom:
+        - configMapRef:
+            name: {{ template "devto.fullname" . }}
+        - secretRef:
+            name: {{ template "devto.fullname" . }}
