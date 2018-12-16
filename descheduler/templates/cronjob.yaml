@@ -12,13 +12,24 @@ spec:
   jobTemplate:
     metadata:
       labels:
+{{ if .Values.labels }}{{ toYaml .Values.labels | indent 8 }}{{end}}
         app: {{ template "descheduler.name" . }}
         release: {{ .Release.Name }}
       annotations:
+{{ if .Values.annotations }}{{ toYaml .Values.annotations | indent 8 }}{{end}}
         scheduler.alpha.kubernetes.io/critical-pod: "true"
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
       template:
+        metadata:
+          labels:
+{{ if .Values.labels }}{{ toYaml .Values.labels | indent 12 }}{{end}}
+            app: {{ template "descheduler.name" . }}
+            release: {{ .Release.Name }}
+          annotations:
+{{ if .Values.annotations }}{{ toYaml .Values.annotations | indent 12 }}{{end}}
+            scheduler.alpha.kubernetes.io/critical-pod: "true"
+            checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
         spec:
           serviceAccountName: {{ template "descheduler.serviceAccountName" . }}
           containers:
