@@ -15,7 +15,7 @@ The handler watches for Spot termination events, and will do the following if de
 You should install into the `kube-system` namespace, but this is not a requirement. The following example assumes this has been chosen.
 
 ```
-helm install incubator/kube-spot-termination-notice-handler --name-space kube-system
+helm install akomljen/kube-spot-termination-notice-handler --name-space kube-system
 ```
 
 ## Configuration

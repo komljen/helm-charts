@@ -1,10 +1,9 @@
-ingressClass: merge
-mergedIngressClass: alb
-
 image:
-  repository: jakubkulhan/merge-ingress
+  repository: jakubkulhan/ingress-merge
   tag: latest
   pullPolicy: Always
+
+ingressClass: merge
 
 rbac:
   create: true
