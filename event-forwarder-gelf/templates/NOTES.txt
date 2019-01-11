@@ -1,0 +1,3 @@
+Check if pod is running:
+
+  $ kubectl get po --selector=app.kubernetes.io/name={{ include "event-forwarder-gelf.name" . }} -n {{ .Release.namespace }}

@@ -1,0 +1,12 @@
+name: event-forwarder-gelf
+version: 0.1.0
+description: Kubernetes event forwarder gelf
+keywords:
+- event
+- forwarder
+- gelf
+maintainers:
+- name: komljen
+  email: alen.komljen@live.com
+  url: https://akomljen.com
+home: https://github.com/xing/kubernetes-event-forwarder-gelf
