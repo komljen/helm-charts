@@ -10,3 +10,6 @@ dependencies:
 - name: fluent-bit
   version: "0.8.0"
   repository: https://kubernetes-charts.storage.googleapis.com/
+- name: elasticsearch-curator
+  version: "1.0.1"
+  repository: https://kubernetes-charts.storage.googleapis.com/

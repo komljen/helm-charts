@@ -49,3 +49,10 @@ fluent-bit:
       logstash_prefix: kubernetes_cluster
   rbac:
     create: true
+
+# https://github.com/helm/charts/blob/master/stable/elasticsearch-curator/values.yaml
+elasticsearch-curator:
+  config:
+    elasticsearch:
+      hosts:
+        - elasticsearch-efk-cluster
