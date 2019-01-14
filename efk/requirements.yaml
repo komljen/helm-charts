@@ -8,7 +8,7 @@ dependencies:
   # repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
   repository: file://../elasticsearch
 - name: fluent-bit
-  version: "0.8.0"
+  version: "1.3.0"
   repository: https://kubernetes-charts.storage.googleapis.com/
 - name: elasticsearch-curator
   version: "1.0.1"
