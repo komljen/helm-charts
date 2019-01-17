@@ -47,8 +47,6 @@ fluent-bit:
       port: 9200
       index: kubernetes_cluster
       logstash_prefix: kubernetes_cluster
-  rbac:
-    create: true
 
 # https://github.com/helm/charts/blob/master/stable/elasticsearch-curator/values.yaml
 elasticsearch-curator:
