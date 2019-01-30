@@ -22,6 +22,10 @@ spec:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+        {{- with .Values.proxy.annotations }}
+{{ toYaml . | indent 8 }}
+        {{- end }}
       labels:
         app: {{ $name }}
         component: {{ $name }}-proxy
@@ -71,10 +75,8 @@ spec:
               value: "true"
             - name: CLUSTER
               value: {{ .Values.proxy.cluster | quote }}
-            - name: VIRTUAL_HOST
-              value: {{ .Values.proxy.virtualHost | quote }}
           {{- if .Values.proxy.providerUrlInternal }}
-            - name: PROXY_PROVIDER_URL
+            - name: PROVIDER_URL_INTERNAL
               value: {{ .Values.proxy.providerUrlInternal | quote }}
           {{- end }}
           readinessProbe:

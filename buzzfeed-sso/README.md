@@ -53,6 +53,7 @@ Parameter | Description | Default
 `namespace` | namespace to use | `default`
 `emailDomain` | the sso email domain for authentication | REQUIRED
 `rootDomain` | the parent domain used for protecting your backends | REQUIRED
+`auth.annotations` | extra annotations for auth pods | `{}`
 `auth.domain` | the auth domain used for OAuth callbacks | REQUIRED
 `auth.replicaCount` | desired number of auth pods | `1`
 `auth.resources` | resource limits and requests for auth pods | `{ limits: { memory: "256Mi", cpu: "200m" }}`
@@ -64,7 +65,7 @@ Parameter | Description | Default
 `auth.secret` | secrets to be generated randomly with `openssl rand -base64 32 | head -c 32`. | REQUIRED if `auth.customSecret` is not set
 `auth.tls` | tls configuration for central sso auth ingress. | `{ secretName: "sso-auth-tls-secret" }`
 `auth.customSecret` | the secret key to reuse (avoids secret creation via helm) | REQUIRED if `auth.secret` is not set
-`proxy.virtualHost` | wildcard domain for redirecting SSO to the backends | REQUIRED
+`proxy.annotations` | extra annotations for proxy pods | `{}`
 `proxy.providerUrlInternal` | url for split dns deployments |
 `proxy.cluster` | the cluster name for SSO | `dev`
 `proxy.replicaCount` | desired number of proxy pods | `1`
@@ -77,7 +78,7 @@ Parameter | Description | Default
 `proxy.secret` | secrets to be generated randomly with `openssl rand -base64 32 | head -c 32 | base64`. | REQUIRED if `proxy.customSecret` is not set
 `proxy.customSecret` | the secret key to reuse (avoids secret creation via helm) | REQUIRED if `proxy.secret` is not set
 `provider.google` | the Oauth provider to use (only Google support for now) | REQUIRED
-`provider.google.adminEmail` | the Google admin email | REQUIRED
+`provider.google.adminEmail` | the Google admin email | `undefined`
 `provider.google.secret` | the Google OAuth secrets | REQUIRED if `provider.google.customSecret` is not set
 `provider.google.customSecret` | the secret key to reuse instead of creating it via helm | REQUIRED if `provider.google.secret` is not set
 `image.repository` | container image repository | `buzzfeed/sso`
