@@ -20,6 +20,17 @@ javaOpts: "-Xms1024m -Xmx1024m"
 #  - us-east-1d
 #  - us-east-1e
 
+## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
+tolerations: []
+# - key: "key"
+#  operator: "Equal|Exists"
+#  value: "value"
+#  effect: "NoSchedule|PreferNoSchedule|NoExecute(1.6 only)"
+
+## Ref: https://kubernetes.io/docs/user-guide/node-selection/
+nodeSelector: {}
+affinity: {}
+
 snapshot:
   enabled: false
   bucketName: elasticsnapshots
