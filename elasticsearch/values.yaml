@@ -1,7 +1,7 @@
 # Default values for elasticsearch-operator.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-name:
+
 # Check https://github.com/upmc-enterprises/elasticsearch-operator#customresourcedefinition for available options
 spec:
   use-ssl: false
@@ -33,3 +33,4 @@ spec:
     limits:
       memory: 2048Mi
       cpu: '1'
+
