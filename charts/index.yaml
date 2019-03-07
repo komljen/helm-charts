@@ -2,10 +2,10 @@ apiVersion: v1
 entries:
   alb-ingress:
   - appVersion: 1.0-beta.7
-    created: 2019-03-07T14:45:54.208551072+01:00
+    created: 2019-03-07T14:53:24.252771215+01:00
     description: The ALB Ingress Controller satisfies Kubernetes ingress resources
       by provisioning Application Load Balancers.
-    digest: c28b34854800289f7740c983ef85082e59a767bb5163eadd7df2d3e54e62574c
+    digest: 84e7e522184ffd96925f8465a641b2da1c1e9653d61e0b8346bb2b23efaaf222
     engine: gotpl
     home: https://github.com/kubernetes-sigs/aws-alb-ingress-controller
     keywords:
@@ -27,9 +27,9 @@ entries:
   buzzfeed-sso:
   - apiVersion: v1
     appVersion: 1.1.0
-    created: 2019-03-07T14:45:54.209025819+01:00
+    created: 2019-03-07T14:53:24.253264246+01:00
     description: Single sign-on for your Kubernetes services using Google OAuth
-    digest: abe9b3256e808481ec205edf9030d0abab78ed95803b3f750714433e208ac43c
+    digest: c2ef42e219a40ab67508a07cf878894cfb9b5f051b33d6e865591689369fa8cf
     home: https://github.com/buzzfeed/sso
     icon: https://user-images.githubusercontent.com/10510566/44476420-a64e5980-a605-11e8-8ad9-2820109deb75.png
     keywords:
@@ -47,9 +47,9 @@ entries:
     version: 0.0.2
   contour:
   - appVersion: v0.8.0
-    created: 2019-03-07T14:45:54.210146338+01:00
+    created: 2019-03-07T14:53:24.254217389+01:00
     description: Contour is a Kubernetes ingress controller for Lyft's Envoy proxy.
-    digest: 73b22f317cf5b95c16ad9749db991001cf134dab057ad72aae1b27f8bbef72be
+    digest: 18902d22c64cf57cf0b1b515a833ceaabebb215265e7f2da3cd30962ed675b47
     home: https://github.com/heptio/contour
     keywords:
     - ingress
@@ -63,7 +63,7 @@ entries:
     - contour-0.2.0.tgz
     version: 0.2.0
   - appVersion: v0.7.0
-    created: 2019-03-07T14:45:54.209795315+01:00
+    created: 2019-03-07T14:53:24.253886808+01:00
     description: Contour is a Kubernetes ingress controller for Lyft's Envoy proxy.
     digest: 6aa9924a409cea5e5ac5d3678d5dda9922108b37527515599f0719537b5738db
     home: https://github.com/heptio/contour
@@ -81,9 +81,9 @@ entries:
   descheduler:
   - apiVersion: v1
     appVersion: v0.8.0
-    created: 2019-03-07T14:45:54.211983433+01:00
+    created: 2019-03-07T14:53:24.255815719+01:00
     description: A Helm chart for Kubernetes Descheduler
-    digest: af49a25ec8a662ecca554b0061cebdebd14f9bdb9ce0f69ab73e98b1e597150b
+    digest: b037ce17ea20af92bafcc483b6728ff71ae1f9ead2d04cf2c2095fb3d3e298d4
     home: https://github.com/kubernetes-incubator/descheduler
     keywords:
     - descheduler
@@ -96,7 +96,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: v0.6.0
-    created: 2019-03-07T14:45:54.21166887+01:00
+    created: 2019-03-07T14:53:24.255500621+01:00
     description: A Helm chart for Kubernetes Descheduler
     digest: 588866b6ea0b5c5fa3e0fa44cc74a1b72e88f45d26f3205608cf46eba84afd2f
     name: descheduler
@@ -105,7 +105,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: v0.5.0-4-ga7ceb671
-    created: 2019-03-07T14:45:54.210900301+01:00
+    created: 2019-03-07T14:53:24.254757165+01:00
     description: A Helm chart for Kubernetes Descheduler
     digest: 32ca0684f33dbfe61f265537e3c87d04c43e7ac9aafeb77f44397cbaa32f6bae
     name: descheduler
@@ -113,10 +113,10 @@ entries:
     - descheduler-0.1.0.tgz
     version: 0.1.0
   devto:
-  - created: 2019-03-07T14:45:54.213183772+01:00
+  - created: 2019-03-07T14:53:24.256805246+01:00
     description: Dev.to is a platform where programmers share ideas and help each
       other grow
-    digest: a44c58cb1aa5d2796893839b0daa59e52bf0b8408ac0f33a8083ba029531f11c
+    digest: d626d9057c608bb531125f095687aed275b86cb67e4c1f02b63908c656552633
     keywords:
     - dev.to
     maintainers:
@@ -131,9 +131,9 @@ entries:
     version: 0.1.0
   efk:
   - appVersion: 6.4.2
-    created: 2019-03-07T14:45:54.221491835+01:00
+    created: 2019-03-07T14:53:24.266919884+01:00
     description: EFK stack
-    digest: c90092784d0e2f7e9bfb222b4cf7c7369dd5542f90206c32fccc7657536027d1
+    digest: e30ea81d1008e6c99b4f1e0330a9798428b24f664d90d799af5331dc36e4beaa
     home: https://akomljen.com/get-kubernetes-logs-with-efk-stack-in-5-minutes/
     keywords:
     - elasticsearch
@@ -147,7 +147,7 @@ entries:
     - efk-0.3.0.tgz
     version: 0.3.0
   - appVersion: 6.4.2
-    created: 2019-03-07T14:45:54.220243889+01:00
+    created: 2019-03-07T14:53:24.265745214+01:00
     description: EFK stack
     digest: 689921716007235bb6d414209652942daded9b378603d4a58bafa79a94b06645
     home: https://akomljen.com/get-kubernetes-logs-with-efk-stack-in-5-minutes/
@@ -163,7 +163,7 @@ entries:
     - efk-0.2.0.tgz
     version: 0.2.0
   - appVersion: 6.4.2
-    created: 2019-03-07T14:45:54.21899357+01:00
+    created: 2019-03-07T14:53:24.263710954+01:00
     description: EFK stack
     digest: 4b24c0e483d95eb1269400954d6a865e9cca76414217f57809a275bd95e21da1
     home: https://akomljen.com/get-kubernetes-logs-with-efk-stack-in-5-minutes/
@@ -179,7 +179,7 @@ entries:
     - efk-0.1.2.tgz
     version: 0.1.2
   - appVersion: 6.4.2
-    created: 2019-03-07T14:45:54.216654875+01:00
+    created: 2019-03-07T14:53:24.26064307+01:00
     description: EFK stack
     digest: 986a7c0c992fe5546dd3ec75f8afdbb7f2fa76e35a4b7d26e5eef5989a2088cf
     home: https://akomljen.com/get-kubernetes-logs-with-efk-stack-in-5-minutes/
@@ -196,7 +196,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-07T14:45:54.214750321+01:00
+    created: 2019-03-07T14:53:24.258602415+01:00
     description: A Helm chart for EFK stack
     digest: ce78209ba17f629cc3e54a00a204a66648884a885d90552495429f74012b08e4
     name: efk
@@ -206,9 +206,9 @@ entries:
   elasticsearch:
   - apiVersion: v1
     appVersion: 6.4.2
-    created: 2019-03-07T14:45:54.223398663+01:00
+    created: 2019-03-07T14:53:24.269404803+01:00
     description: A Helm chart for Elasticsearch cluster
-    digest: 1902fd6b83957134b158fb2fdf8cc4a532f2d53dd3806ae49eab9af22b2b579c
+    digest: 321e1530cd6a4a3539c4a2f7c9fda30791b624964ec4bd98b844d52de3a6d838
     maintainers:
     - email: alen.komljen@live.com
       name: komljen
@@ -221,7 +221,7 @@ entries:
     version: 0.1.6
   - apiVersion: v1
     appVersion: 6.4.2
-    created: 2019-03-07T14:45:54.223150086+01:00
+    created: 2019-03-07T14:53:24.269094358+01:00
     description: A Helm chart for Elasticsearch cluster
     digest: a3d07ec0568e2eb5975ce518488595bf697ef2dd17033ba813dc6ad954e697a3
     maintainers:
@@ -236,7 +236,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: 6.1.3
-    created: 2019-03-07T14:45:54.222624659+01:00
+    created: 2019-03-07T14:53:24.268447565+01:00
     description: A Helm chart for Elasticsearch cluster
     digest: 0c39d3e6e39ccbf48231d58cb76e394425f49e2e593f46940d53b721240e968f
     maintainers:
@@ -251,7 +251,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 6.1.3
-    created: 2019-03-07T14:45:54.222042604+01:00
+    created: 2019-03-07T14:53:24.267675308+01:00
     description: A Helm chart for Elasticsearch cluster
     digest: 32a25b05c73cc92b49fc53b64d25cee44d28e1062db1ef12f2cbcb0e260d0019
     maintainers:
@@ -267,9 +267,9 @@ entries:
   elasticsearch-operator:
   - apiVersion: v1
     appVersion: 0.3.0
-    created: 2019-03-07T14:45:54.225492048+01:00
+    created: 2019-03-07T14:53:24.271976846+01:00
     description: A Helm chart for Elasticsearch operator
-    digest: 82328a05fb1e7304d9f60b88a90424b9a5bcb391c2d4fe6cdd9e8ee48ca95a89
+    digest: 4d2d547f8dd03d2f630eaee8e0789f9ef2e4c493b0b8e47757a57ed5ac3a6180
     maintainers:
     - email: alen.komljen@live.com
       name: komljen
@@ -282,7 +282,7 @@ entries:
     version: 0.1.6
   - apiVersion: v1
     appVersion: 0.0.12
-    created: 2019-03-07T14:45:54.225184856+01:00
+    created: 2019-03-07T14:53:24.271692231+01:00
     description: A Helm chart for Elasticsearch operator
     digest: e8b98c31db96dd637e94ea873e0dd6080451c8d11f2080023c54230d3305ce70
     maintainers:
@@ -297,7 +297,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: 0.0.12
-    created: 2019-03-07T14:45:54.224605331+01:00
+    created: 2019-03-07T14:53:24.270873884+01:00
     description: A Helm chart for Elasticsearch operator
     digest: f909a7a19ec3e04259a40728c7428515701aed1f8cae7407c8b6a993b6e083d8
     maintainers:
@@ -312,7 +312,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 0.0.10
-    created: 2019-03-07T14:45:54.224025466+01:00
+    created: 2019-03-07T14:53:24.269985586+01:00
     description: A Helm chart for Elasticsearch operator
     digest: dea5f18a301f11dee2aef9ac1dd3b44069e4bc128c8c32f8e1322a55a385a282
     maintainers:
@@ -326,9 +326,9 @@ entries:
     - elasticsearch-operator-0.1.3.tgz
     version: 0.1.3
   event-forwarder-gelf:
-  - created: 2019-03-07T14:45:54.226566966+01:00
+  - created: 2019-03-07T14:53:24.27313148+01:00
     description: Kubernetes event forwarder gelf
-    digest: 35392f0486572af8839260351cdc412beaea8d572dc3f2cc4e8152519f7cf0f6
+    digest: 289d218f22706ad4c935c48a05a2f60511063535ba705978bfb07b2b33f578c7
     home: https://github.com/xing/kubernetes-event-forwarder-gelf
     keywords:
     - event
@@ -342,7 +342,7 @@ entries:
     urls:
     - event-forwarder-gelf-0.1.1.tgz
     version: 0.1.1
-  - created: 2019-03-07T14:45:54.226205505+01:00
+  - created: 2019-03-07T14:53:24.272613735+01:00
     description: Kubernetes event forwarder gelf
     digest: b2c674afbed2f84e26b9a8c77c7341c41ac79829380bc1dbdcfaf6abc87117ea
     home: https://github.com/xing/kubernetes-event-forwarder-gelf
@@ -376,9 +376,9 @@ entries:
     - graylog-0.1.0.tgz
     version: 0.1.0
   hpa-operator:
-  - created: 2019-03-07T14:45:54.228197283+01:00
+  - created: 2019-03-07T14:53:24.274548968+01:00
     description: A Helm chart for Kubernetes
-    digest: c4d4567fb350352d7169a4eab007249de3f134c9b950d1f03a19b7cf62b5b1d2
+    digest: 5323f9a419f4a8627a664f269e8161f649814b392cf2774862f49bb1931b3aa5
     home: https://banzaicloud.com
     keywords:
     - hpa
@@ -393,7 +393,7 @@ entries:
     urls:
     - hpa-operator-0.0.6.tgz
     version: 0.0.6
-  - created: 2019-03-07T14:45:54.227620995+01:00
+  - created: 2019-03-07T14:53:24.274079019+01:00
     description: A Helm chart for Kubernetes
     digest: 00e5bb3e1fbb7e268288e53df2b0c629b9f3a85091b6c579b63c69961a2b393f
     home: https://banzaicloud.com
@@ -413,9 +413,9 @@ entries:
   k8s-spot-rescheduler:
   - apiVersion: v1
     appVersion: v0.2.0
-    created: 2019-03-07T14:45:54.229642506+01:00
+    created: 2019-03-07T14:53:24.2757531+01:00
     description: A k8s-spot-rescheduler Helm chart for Kubernetes
-    digest: 91346a55e4a63d1905e31481b5f31da2a552ae8b57b8dc2746bc23560bbdd804
+    digest: d05776fe52c148f7a130564c3404489318fddb0803346318bd479703eb1ccac4
     home: https://github.com/pusher/k8s-spot-rescheduler
     keywords:
     - spot
@@ -431,7 +431,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: v0.1.1
-    created: 2019-03-07T14:45:54.229207198+01:00
+    created: 2019-03-07T14:53:24.275412679+01:00
     description: A k8s-spot-rescheduler Helm chart for Kubernetes
     digest: 255c56c1e35296a45dee14e8d069210a3c8ef4865b44b01b2378f3b8c1423bd2
     home: https://github.com/pusher/k8s-spot-rescheduler
@@ -449,9 +449,9 @@ entries:
     version: 0.2.0
   kibana:
   - appVersion: 6.4.2
-    created: 2019-03-07T14:45:54.23153149+01:00
+    created: 2019-03-07T14:53:24.277170394+01:00
     description: Kibana is an open source data visualization plugin for Elasticsearch
-    digest: 8087d965f06439432592b4246b390efb2e854297f4dc2d2a67510bc883f39b47
+    digest: b182f116b4615a099051964086d483e577cd80efaee65b2b28aecb69968f7134
     engine: gotpl
     home: https://www.elastic.co/products/kibana
     icon: https://raw.githubusercontent.com/elastic/kibana/master/src/ui/public/icons/kibana-color.svg
@@ -470,7 +470,7 @@ entries:
     - kibana-0.4.3.tgz
     version: 0.4.3
   - appVersion: 6.1.3
-    created: 2019-03-07T14:45:54.23101217+01:00
+    created: 2019-03-07T14:53:24.276787229+01:00
     description: Kibana is an open source data visualization plugin for Elasticsearch
     digest: 4c8e34db4ecf86ef2569bedb10283f591df4ece54059c7f37a8eab1ae3acb5fc
     engine: gotpl
@@ -493,9 +493,9 @@ entries:
   kube-spot-termination-notice-handler:
   - apiVersion: v1
     appVersion: 1.10.8-1
-    created: 2019-03-07T14:45:54.234030056+01:00
+    created: 2019-03-07T14:53:24.279187993+01:00
     description: Watch and action AWS spot termination events
-    digest: 4251ce4aea28fba88324dce4effb9f1f1ef7fe1b14e33e3a023d9850f0f5c735
+    digest: 49f19e6080989fce9dbcc2c67a979c1956f070ceb12e0b73b1eaa2de70606353
     home: https://github.com/kube-aws/kube-spot-termination-notice-handler
     maintainers:
     - email: alen.komljen@live.com
@@ -507,7 +507,7 @@ entries:
     version: 0.4.3
   - apiVersion: v1
     appVersion: 1.10.8-1
-    created: 2019-03-07T14:45:54.232947651+01:00
+    created: 2019-03-07T14:53:24.278827705+01:00
     description: Watch and action AWS spot termination events
     digest: 12b80fcc436e40e7f43b55ccf6c9ae9405b125f31c3b9bd96a82cdc7b8e8c142
     home: https://github.com/kube-aws/kube-spot-termination-notice-handler
@@ -521,7 +521,7 @@ entries:
     version: 0.4.2
   - apiVersion: v1
     appVersion: 1.10.8-1
-    created: 2019-03-07T14:45:54.232228048+01:00
+    created: 2019-03-07T14:53:24.277975903+01:00
     description: Watch and action AWS spot termination events
     digest: 33a11839fdb1823d25af466245875046cb83bbaab1768def1e4df2dbcdd6333e
     home: https://github.com/kube-aws/kube-spot-termination-notice-handler
@@ -535,10 +535,10 @@ entries:
     version: 0.4.1
   merge-ingress:
   - apiVersion: v1
-    created: 2019-03-07T14:45:54.234334804+01:00
+    created: 2019-03-07T14:53:24.279462529+01:00
     description: Merge Ingress Controller combines multiple ingress resorces into
       a new one.
-    digest: fa37320b5f42596c1f72990eb726a98d25d84343f3ca91d0d48ff0ed99c5ff83
+    digest: be0538af1378ff067911deb115b53fc7bfe07ac3fefede3405559a0666e0156b
     home: https://github.com/jakubkulhan/ingress-merge
     keywords:
     - ingress
@@ -554,9 +554,9 @@ entries:
   metrics-server:
   - apiVersion: v1
     appVersion: 0.3.1
-    created: 2019-03-07T14:45:54.234658428+01:00
+    created: 2019-03-07T14:53:24.279801737+01:00
     description: Metrics Server is a cluster-wide aggregator of resource usage data.
-    digest: 0a10b4474f8ad659b7c25a4e5acd1b201e58ff85019865d9e90199ac44c07560
+    digest: 98fedc98afe912dbd4094a36026f161d585ab54e2c001c28be4bc9b36fb5999e
     home: https://github.com/kubernetes-incubator/metrics-server
     keywords:
     - metrics-server
@@ -570,4 +570,4 @@ entries:
     urls:
     - metrics-server-0.0.5.tgz
     version: 0.0.5
-generated: 2019-03-07T14:45:54.207908868+01:00
+generated: 2019-03-07T14:53:24.252210183+01:00
