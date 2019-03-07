@@ -4,12 +4,12 @@ dependencies:
   version: 0.4.3
 - name: elasticsearch
   repository: file://../elasticsearch
-  version: 0.1.5
+  version: 0.1.6
 - name: fluent-bit
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 1.3.0
 - name: elasticsearch-curator
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 1.0.1
-digest: sha256:d99a8efabaedeef6464780fa0f83adfa5f5704c2cd933823b0949d18587bed21
-generated: 2019-01-14T19:39:33.179259+01:00
+digest: sha256:08d00513d30c92b19abbe9b02eed1967a1225ea969d3c3fe881ffd25506ca4d7
+generated: 2019-03-07T14:19:56.938919227+01:00

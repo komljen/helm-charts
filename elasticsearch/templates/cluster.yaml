@@ -8,47 +8,4 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
-  use-ssl: {{ .Values.useSSL }}
-{{- if .Values.kibana.enabled }}
-  kibana:
-    image: {{ .Values.kibana.image }}
-{{- end }}
-{{- if .Values.cerebro.enabled }}
-  cerebro:
-    image: {{ .Values.cerebro.image }}
-{{- end }}
-  elastic-search-image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-  client-node-replicas: {{ .Values.clientReplicas }}
-  master-node-replicas: {{ .Values.masterReplicas }}
-  data-node-replicas: {{ .Values.dataReplicas }}
-  network-host: 0.0.0.0
-{{- if .Values.zones }}
-  zones:
-{{ toYaml .Values.zones | indent 4 }}
-{{- else }}
-  zones: []
-{{- end }}
-  data-volume-size: {{ .Values.dataVolumeSize }}
-  java-options: {{ .Values.javaOpts }}
-{{- if .Values.image.pullSecret }}
-  image-pull-secrets:
-    - name: {{ .Values.image.pullSecret }}
-{{- end }}
-  snapshot:
-    scheduler-enabled: {{ .Values.snapshot.enabled }}
-    bucket-name: {{ .Values.snapshot.bucketName }}
-    cron-schedule: "{{ .Values.snapshot.schedule }}"
-{{- if .Values.snapshot.authentication.enabled }}
-    authentication:
-     password: {{ .Values.snapshot.authentication.password }}
-     username: {{ .Values.snapshot.authentication.username }}
-{{- end }}
-  storage:
-    type: {{ .Values.storage.type }}
-    storage-class-provisioner: {{ .Values.storage.classProvisioner }}
-    volume-reclaim-policy: {{ .Values.storage.reclaimPolicy }}
-{{- if .Values.statsd.enabled }}
-  statsd-host: {{ .Values.statsd.host }}
-{{- end }}
-  resources:
-{{ toYaml .Values.resources | indent 4 }}
+{{ toYaml .Values.spec | indent 2 }}

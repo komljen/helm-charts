@@ -4,7 +4,7 @@ dependencies:
   # repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
   repository: file://../kibana
 - name: elasticsearch
-  version: "0.1.5"
+  version: "0.1.6"
   # repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
   repository: file://../elasticsearch
 - name: fluent-bit

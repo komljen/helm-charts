@@ -1,58 +1,35 @@
 # Default values for elasticsearch-operator.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-image:
-  repository: quay.io/pires/docker-elasticsearch-kubernetes
-  tag: "6.4.2"
-  # pullSecret: secretName
-
-useSSL: false
-
-clientReplicas: 1
-masterReplicas: 1
-dataReplicas: 1
-dataVolumeSize: 1Gi
-javaOpts: "-Xms1024m -Xmx1024m"
-
-# Deploy data nodes across zones
-#zones:
-#  - us-east-1c
-#  - us-east-1d
-#  - us-east-1e
-
-snapshot:
-  enabled: false
-  bucketName: elasticsnapshots
-  schedule: "@every 2m"
-  authentication:
+name:
+# Check https://github.com/upmc-enterprises/elasticsearch-operator#customresourcedefinition for available options
+spec:
+  use-ssl: false
+  elastic-search-image: quay.io/pires/docker-elasticsearch-kubernetes:6.4.2
+  client-node-replicas: 1
+  master-node-replicas: 1
+  data-node-replicas: 1
+  network-host: 0.0.0.0
+  zones: []
+  data-volume-size: 10Gi
+  client-java-options: "-Xms2048m -Xmx2048m"
+  master-java-options: "-Xms2048m -Xmx2048m"
+  data-java-options: "-Xms2048m -Xmx2048m"
+  snapshot:
     enabled: false
-    password: test
-    username: test
-
-storage:
-  # e.g. gp2 for AWS
-  type: gp2
-  # e.g. kubernetes.io/aws-ebs for AWS
-  classProvisioner: volume.alpha.kubernetes.io/storage-class
-  # Retain or Delete
-  reclaimPolicy: Delete
-
-kibana:
-  enabled: false
-  image: docker.elastic.co/kibana/kibana-oss:6.4.2
-
-cerebro:
-  enabled: false
-  image: upmcenterprises/cerebro:0.6.8
-
-statsd:
-  enabled: false
-  host: ""
-
-resources:
-  requests:
-    memory: 1024Mi
-    cpu: 200m
-  limits:
-    memory: 2048Mi
-    cpu: '1'
+    bucketName: elasticsnapshots
+    schedule: "@every 2m"
+  storage:
+    # e.g. gp2 for AWS
+    type: gp2
+    # e.g. kubernetes.io/aws-ebs for AWS
+    classProvisioner: volume.alpha.kubernetes.io/storage-class
+    # Retain or Delete
+    reclaimPolicy: Delete
+  resources:
+    requests:
+      memory: 1024Mi
+      cpu: 200m
+    limits:
+      memory: 2048Mi
+      cpu: '1'
