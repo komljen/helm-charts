@@ -1,8 +1,4 @@
 dependencies:
-- name: kibana
-  version: "0.4.3"
-  # repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
-  repository: file://../kibana
 - name: elasticsearch
   version: "0.1.6"
   # repository: https://raw.githubusercontent.com/komljen/helm-charts/master/charts/
@@ -12,4 +8,7 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com/
 - name: elasticsearch-curator
   version: "1.0.1"
+  repository: https://kubernetes-charts.storage.googleapis.com/
+- name: kibana
+  version: "2.0.0"
   repository: https://kubernetes-charts.storage.googleapis.com/

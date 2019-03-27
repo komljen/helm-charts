@@ -1,7 +1,4 @@
 dependencies:
-- name: kibana
-  repository: file://../kibana
-  version: 0.4.3
 - name: elasticsearch
   repository: file://../elasticsearch
   version: 0.1.6
@@ -11,5 +8,8 @@ dependencies:
 - name: elasticsearch-curator
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 1.0.1
-digest: sha256:08d00513d30c92b19abbe9b02eed1967a1225ea969d3c3fe881ffd25506ca4d7
-generated: 2019-03-07T14:19:56.938919227+01:00
+- name: kibana
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 2.0.0
+digest: sha256:140ba09cb221b29b89c8cafd99981ee9bb6dd29a1987ed8da819b1d8c2cb3af2
+generated: 2019-03-17T21:02:41.648636+01:00
