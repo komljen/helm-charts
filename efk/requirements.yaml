@@ -6,6 +6,11 @@ dependencies:
 - name: fluent-bit
   version: "1.3.0"
   repository: https://kubernetes-charts.storage.googleapis.com/
+  condition: fluent-bit.enabled
+- name: filebeat
+  version: "1.7.0"
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  condition: filebeat.enabled
 - name: elasticsearch-curator
   version: "1.0.1"
   repository: https://kubernetes-charts.storage.googleapis.com/

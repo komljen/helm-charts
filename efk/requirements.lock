@@ -5,11 +5,14 @@ dependencies:
 - name: fluent-bit
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 1.3.0
+- name: filebeat
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 1.7.0
 - name: elasticsearch-curator
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 1.0.1
 - name: kibana
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 2.0.0
-digest: sha256:140ba09cb221b29b89c8cafd99981ee9bb6dd29a1987ed8da819b1d8c2cb3af2
-generated: 2019-03-17T21:02:41.648636+01:00
+digest: sha256:a900210e523dfd4109cb56ed188f28afdc7efb6ff7b73546655d0601f76da056
+generated: 2019-05-21T17:34:32.10322+02:00

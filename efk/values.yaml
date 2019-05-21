@@ -50,6 +50,7 @@ elasticsearch:
 
 # https://github.com/kubernetes/charts/blob/master/stable/fluent-bit/values.yaml
 fluent-bit:
+  enabled: true
   image:
     fluent_bit:
       repository: fluent/fluent-bit
@@ -68,3 +69,33 @@ elasticsearch-curator:
     elasticsearch:
       hosts:
         - elasticsearch-efk-cluster
+
+# https://github.com/kubernetes/charts/blob/master/stable/filebeat/values.yaml
+filebeat:
+  enabled: false
+  config:
+    setup.template.name: "kubernetes_cluster"
+    setup.template.pattern: "kubernetes_cluster-*"
+    processors:
+    - decode_json_fields:
+        fields: ["message"]
+        process_array: true
+        max_depth: 8
+        target: ""
+    filebeat.prospectors:
+      - type: docker
+        containers.ids:
+        - "*"
+        processors:
+          - add_kubernetes_metadata:
+              in_cluster: true
+          - drop_event:
+              when:
+                equals:
+                  kubernetes.container.name: "filebeat"
+    output.file:
+      enabled: false
+    output.elasticsearch:
+      hosts: ["http://elasticsearch-efk-cluster:9200"]
+      index: "kubernetes_cluster-%{+yyyy.MM.dd}"
+  privileged: true
