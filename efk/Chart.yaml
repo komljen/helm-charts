@@ -1,5 +1,5 @@
 name: efk
-version: 0.3.3
+version: 0.3.4
 appVersion: 6.4.2
 description: EFK stack
 keywords:

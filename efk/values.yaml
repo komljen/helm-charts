@@ -30,9 +30,12 @@ elasticsearch:
     master-java-options: "-Xms2048m -Xmx2048m"
     data-java-options: "-Xms2048m -Xmx2048m"
     snapshot:
-      enabled: false
-      bucketName: elasticsnapshots
-      schedule: "@every 2m"
+      scheduler-enabled: false
+      repo-type: s3
+      bucket-name: efk-snapshots
+      cron-schedule: "0 2 * * *"
+      repo-region: us-east-1
+      image: komljen/elasticsearch-cron:0.0.6
     storage:
       # e.g. gp2 for AWS
       type: gp2
