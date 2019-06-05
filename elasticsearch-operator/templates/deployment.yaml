@@ -29,6 +29,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
+        command: ["/bin/sh"]
+        args: ["-c", "/usr/local/bin/elasticsearch-operator -initDaemonsetNamespace $(NAMESPACE)"]
         ports:
         - containerPort: 8000
           name: http
