@@ -14,5 +14,8 @@ dependencies:
 - name: kibana
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 2.0.0
-digest: sha256:a900210e523dfd4109cb56ed188f28afdc7efb6ff7b73546655d0601f76da056
-generated: 2019-05-21T17:34:32.10322+02:00
+- name: metricbeat
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 1.7.0
+digest: sha256:98d3349733e5d702debea63eccfde0e774c3837472555e22e79096b41a0f37ec
+generated: 2019-07-07T13:09:11.430108+02:00

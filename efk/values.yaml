@@ -1,6 +1,6 @@
 # Default values for efk.
 
-# https://github.com/komljen/helm-charts/blob/master/kibana/values.yaml
+# https://github.com/helm/charts/blob/master/stable/kibana/values.yaml
 kibana:
   image:
     repository: "docker.elastic.co/kibana/kibana-oss"
@@ -51,7 +51,7 @@ elasticsearch:
         memory: 2048Mi
         cpu: '1'
 
-# https://github.com/kubernetes/charts/blob/master/stable/fluent-bit/values.yaml
+# https://github.com/helm/charts/blob/master/stable/fluent-bit/values.yaml
 fluent-bit:
   enabled: true
   image:
@@ -73,7 +73,7 @@ elasticsearch-curator:
       hosts:
         - elasticsearch-efk-cluster
 
-# https://github.com/kubernetes/charts/blob/master/stable/filebeat/values.yaml
+# https://github.com/helm/charts/blob/master/stable/filebeat/values.yaml
 filebeat:
   enabled: false
   config:
@@ -102,3 +102,26 @@ filebeat:
       hosts: ["http://elasticsearch-efk-cluster:9200"]
       index: "kubernetes_cluster-%{+yyyy.MM.dd}"
   privileged: true
+
+# https://github.com/helm/charts/blob/master/stable/metricbeat/values.yaml
+metricbeat:
+  enabled: false
+  daemonset:
+    enabled: false
+
+  deployment:
+    config:
+      setup.template.name: "kubernetes_events"
+      setup.template.pattern: "kubernetes_events-*"
+      output.elasticsearch:
+        hosts: ["http://elasticsearch-efk-cluster:9200"]
+        index: "kubernetes_events-%{[beat.version]}-%{+yyyy.MM.dd}"
+      output.file:
+        enabled: false
+    modules:
+      kubernetes:
+        enabled: true
+        config:
+          - module: kubernetes
+            metricsets:
+              - event
