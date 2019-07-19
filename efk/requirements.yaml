@@ -20,3 +20,4 @@ dependencies:
 - name: metricbeat
   version: "1.7.0"
   repository: https://kubernetes-charts.storage.googleapis.com/
+  condition: metricbeat.enabled

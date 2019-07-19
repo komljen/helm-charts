@@ -17,5 +17,5 @@ dependencies:
 - name: metricbeat
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 1.7.0
-digest: sha256:98d3349733e5d702debea63eccfde0e774c3837472555e22e79096b41a0f37ec
-generated: 2019-07-07T13:09:11.430108+02:00
+digest: sha256:a6bfa0c35446d2a06352450cace33e86165d1f15eafcfde7a9e26402f03e86f9
+generated: 2019-07-19T17:46:48.019752+02:00
