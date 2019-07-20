@@ -43,6 +43,17 @@ elasticsearch:
       classProvisioner: volume.alpha.kubernetes.io/storage-class
       # Retain or Delete
       reclaimPolicy: Delete
+  
+  ingress:
+    # if enabled it will create the ingress
+    enabled: false
+    hosts:
+      - your_elsaticsearch_domain.com
+    annotations:
+      kubernetes.io/ingress.class: your_controller
+    path: /
+  httpPort: 9200
+
     resources:
       requests:
         memory: 1024Mi
