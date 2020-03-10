@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 image:
-  repository: komljen/descheduler
-  tag: v0.8.0
+  repository: us.gcr.io/k8s-artifacts-prod/descheduler/descheduler
+  tag: v0.10.0
   pullPolicy: IfNotPresent
 
 schedule: "*/30 * * * *"
@@ -36,6 +36,8 @@ deschedulerPolicy:
       params:
         nodeAffinityType:
         - requiredDuringSchedulingIgnoredDuringExecution
+    RemovePodsViolatingNodeTaints:
+      enabled: true
 
 rbac:
   # Specifies whether RBAC resources should be created

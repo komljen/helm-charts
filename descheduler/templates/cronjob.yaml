@@ -9,18 +9,19 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   schedule: "{{ .Values.schedule }}"
+  concurrencyPolicy: "Forbid"
   jobTemplate:
     metadata:
       labels:
         app: {{ template "descheduler.name" . }}
         release: {{ .Release.Name }}
       annotations:
-        scheduler.alpha.kubernetes.io/critical-pod: "true"
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
       template:
         spec:
           serviceAccountName: {{ template "descheduler.serviceAccountName" . }}
+          priorityClassName: system-cluster-critical
           containers:
           - name: {{ .Chart.Name }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -30,11 +31,12 @@ spec:
               name: policy-volume
             command:
             - /bin/descheduler
+            args:
             - --policy-config-file=/policy-dir/deschedulerpolicy.yaml
             {{- range $key, $value := .Values.cmdOptions }}
             - --{{ $key }}{{ if $value }}={{ $value }}{{ end }}
             {{- end }}
-          restartPolicy: "OnFailure"
+          restartPolicy: "Never"
           volumes:
           - name: policy-volume
             configMap:
